@@ -1,0 +1,16 @@
+﻿# Business Requirements
+- Each flight has an origin and destination airport, a unique number, date and time of departure.
+- The flight cannot have the same airport as its origin and destination, and these airports cannot be located in the same city.
+- Flights must have at least one class, containing a type of class, the number of seats, and the price for each seat.
+- The number of tickets for a flight is limited by the number of seats available in each class. And there must not be two or more classes of the same type on the same flight.
+- Airports are located in cities, and each one has a name and its own IATA airport code, which is unique.
+- Cities must have a name and a federative unit.
+- Airline tickets represent one seat in the chosen class. A ticket contains a unique identification number for internal control, passenger data (name, social security number, date of birth), the total price of the ticket, and the class. No more tickets can be sold than the maximum class capacity.
+- You can search for tickets by entering the airports of origin and destination, and the date you want. Optionally, they can be filtered by values. The result cannot show flights with no seats available. And past flights cannot be displayed.
+- Tickets must be linked to the visitor who purchased them, identifying them with their name, CPF, date of birth and email.
+- Each ticket allows for a maximum of one baggage, and if checked in, a fee of 10% of the seat price must be added to the ticket price. Luggage has a unique number for internal control.
+- During the purchase, the visitor must provide the buyer's details, the number of tickets, the chosen class, and the list with the details of each passenger and whether there is luggage to be checked in.
+- After purchasing the tickets, it is possible to issue vouchers for each one containing the ticket number, flight number, origin and destination, and the passenger, in addition to indicating whether baggage is checked in.
+- If baggage is checked in, it is also possible to issue a baggage tag with the ticket and baggage identification numbers, and the passenger's name.
+- The time limit for issuing both the label and the voucher is a maximum of 5 hours before the flight.
+- There must be two access possibilities: the management of flights, luggage, passengers and tickets can only be carried out by authenticated managers; searches for flights, purchases, ticket queries made by a buyer, issuance of vouchers and tags can be carried out by anyone.

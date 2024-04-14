@@ -1,0 +1,32 @@
+﻿- [ ] Flight has a unique identification number
+- [ ] Flight cloud not have same Origin and Destination Airport
+- [ ] Flight should have a different City Destination than the Origin
+- [ ] Flights should contain at least one class
+- [ ] Flights can only have one class of the same type
+- [ ] Flights can only have tickers equal to the available seats in each class
+- [ ] Airports are situated in a City
+- [ ] Airports have a unique IATA Code
+- [ ] Cities must have a Name
+- [ ] Cities must have a UF
+- [ ] Tickets should have a unique identification number
+- [ ] Tickets should contain the data about the passenger (name, email, cpf, birthdate)
+- [ ] Tickets should have the total price
+- [ ] Can't see more tickets than the max capacity of the Flight
+- [ ] Be able to search for tickets by the origin and destination airports and the date
+- [ ] Search results can't show full flights
+- [ ] Search results can't show flights in the past
+- [ ] Tickets should be assigned to the user that bought them
+- [ ] Each Ticket allow max one Luggage
+- [ ] If luggage is checked in add a fee of 10% of the ticket price
+- [ ] After the ticket is bought users can emmit the voucher
+- [ ] If the luggage needs to be checked in users can emmit the luggage label
+- [ ] The time limit for issuing label is a max of 5 hours before the flight.
+- [ ] The time limit for issuing voucher is a max of 5 hours before the flight.
+- [ ] Users Can buy Tickets
+- [ ] Users can search flights
+- [ ] Users can buy tickers
+- [ ] Users can query tickets
+- [ ] Manager can manage (add, delete, cancel, update) fligts
+- [ ] Manager can't buy tickets
+- [ ] Anyone can emmit vouchers
+- [ ] Anyone can emmit labels

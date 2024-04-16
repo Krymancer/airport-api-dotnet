@@ -4,7 +4,7 @@ namespace Airport.Domain.Entities;
 
 public class Flight : BaseEntity
 {
-    public string Number { get; set; } = string.Empty;
+    public string Number { get; set; } = Guid.NewGuid().ToString();
     public Guid OriginAirportId { get; set; }
     public Guid DestinationAirportId { get; set; }
     public DateTime Departure { get; set; }

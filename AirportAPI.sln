@@ -1,16 +1,16 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Airport.API", "src\Airport.API\Airport.API.csproj", "{21E3A8C3-900E-4EAC-B115-0C7CFD189CFE}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AirportAPI.API", "src\AirportAPI.API\AirportAPI.API.csproj", "{21E3A8C3-900E-4EAC-B115-0C7CFD189CFE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Airport.Application", "src\Airport.Application\Airport.Application.csproj", "{F3D24458-EA24-4627-8890-2B9C9AA60620}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AirportAPI.Application", "src\AirportAPI.Application\AirportAPI.Application.csproj", "{F3D24458-EA24-4627-8890-2B9C9AA60620}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Airport.Contracts", "src\Airport.Contracts\Airport.Contracts.csproj", "{C5D760BB-B423-4D55-9196-B0F55E3F0E7D}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AirportAPI.Contracts", "src\AirportAPI.Contracts\AirportAPI.Contracts.csproj", "{C5D760BB-B423-4D55-9196-B0F55E3F0E7D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Airport.Domain", "src\Airport.Domain\Airport.Domain.csproj", "{1923647A-8AF3-4E6B-BF7F-F7D8F019CDC9}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AirportAPI.Domain", "src\AirportAPI.Domain\AirportAPI.Domain.csproj", "{1923647A-8AF3-4E6B-BF7F-F7D8F019CDC9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Airport.Infrastructure", "src\Airport.Infrastructure\Airport.Infrastructure.csproj", "{986F20EA-F280-49C3-BFFF-DBE7710F3E37}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AirportAPI.Infrastructure", "src\AirportAPI.Infrastructure\AirportAPI.Infrastructure.csproj", "{986F20EA-F280-49C3-BFFF-DBE7710F3E37}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Airport.Tests", "tests\Airport.Tests\Airport.Tests.csproj", "{79727945-E53A-49E4-89EA-4B2EDAC4D782}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AirportAPI.Tests", "tests\AirportAPI.Tests\AirportAPI.Tests.csproj", "{79727945-E53A-49E4-89EA-4B2EDAC4D782}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{FF5DCD4B-84B4-4F7A-BF30-EF2C50ABBB60}"
 EndProject

@@ -16,6 +16,8 @@ public abstract class BaseRepository<T> : IBaseRepository<T>
         _dbSet = context.Set<T>();
     }
 
+    public virtual IQueryable<T> Get() => _dbSet;
+
     public virtual async Task<IEnumerable<T>> GetAsync(Expression<Func<T, bool>>? filter = null,
         Func<IQueryable<T>, IOrderedQueryable<T>>? orderBy = null, params Expression<Func<T, object>>[] includes)
     {

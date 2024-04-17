@@ -1,8 +1,8 @@
-﻿using Airport.Domain.Entities;
+﻿using Domain.Entities;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
-namespace Airport.Infrastructure.Persistence.EntitiesConfiguration;
+namespace Infrastructure.Common.Persistence.EntitiesConfiguration;
 
 public class FlightConfiguration : IEntityTypeConfiguration<Flight>
 {
@@ -10,11 +10,11 @@ public class FlightConfiguration : IEntityTypeConfiguration<Flight>
     {
         builder.HasOne(flight => flight.OriginAirport)
             .WithOne()
-            .HasForeignKey<Flight>(flight => flight.OriginAirport);
+            .HasForeignKey<Flight>(flight => flight.OriginAirportId);
 
         builder.HasOne(flight => flight.DestinationAirport)
             .WithOne()
-            .HasForeignKey<Flight>(flight => flight.DestinationAirport);
+            .HasForeignKey<Flight>(flight => flight.DestinationAirportId);
 
         builder.HasMany(flight => flight.Tickets)
             .WithOne(ticket => ticket.Flight);

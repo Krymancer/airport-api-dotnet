@@ -1,7 +1,7 @@
-﻿using Airport.Domain.Common;
-using Airport.Domain.Enums;
+﻿using Domain.Common;
+using Domain.Enums;
 
-namespace Airport.Domain.Entities;
+namespace Domain.Entities;
 
 public class FlightClass: BaseEntity
 {

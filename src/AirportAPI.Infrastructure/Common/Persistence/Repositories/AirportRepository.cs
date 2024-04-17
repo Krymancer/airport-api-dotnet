@@ -1,8 +1,8 @@
-﻿using Airport.Infrastructure.Persistence.Repositories.Abstractions;
-using Airport.Infrastructure.Persistence.Repositories.Common;
+﻿using Infrastructure.Common.Persistence.Repositories.Abstractions;
+using Infrastructure.Common.Persistence.Repositories.Common;
 using Microsoft.EntityFrameworkCore;
 
-namespace Airport.Infrastructure.Persistence.Repositories;
+namespace Infrastructure.Common.Persistence.Repositories;
 
 public class AirportRepository: BaseRepository<Domain.Entities.Airport>, IAirportRepository
 {

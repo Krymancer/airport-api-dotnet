@@ -1,8 +1,7 @@
-﻿using Airport.Domain.Entities;
-using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
-namespace Airport.Infrastructure.Persistence.EntitiesConfiguration;
+namespace Infrastructure.Common.Persistence.EntitiesConfiguration;
 
 public class AirportConfiguration : IEntityTypeConfiguration<Domain.Entities.Airport>
 {

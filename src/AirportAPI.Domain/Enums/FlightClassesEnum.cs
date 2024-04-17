@@ -1,4 +1,4 @@
-﻿namespace Airport.Domain.Enums;
+﻿namespace Domain.Enums;
 
 public enum FlightClassesEnum
 {

@@ -1,6 +1,6 @@
 ﻿using System.Linq.Expressions;
 
-namespace Airport.Infrastructure.Persistence.Repositories.Common;
+namespace Infrastructure.Common.Persistence.Repositories.Common;
 
 public interface IBaseRepository<T>
 {

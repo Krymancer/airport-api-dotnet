@@ -1,6 +1,8 @@
-﻿namespace Airport.Domain.Entities;
+﻿using Domain.Common;
 
-public class City
+namespace Domain.Entities;
+
+public class City: BaseEntity
 {
     public string Name { get; set; } = String.Empty;
     public string UF { get; set; } = String.Empty;

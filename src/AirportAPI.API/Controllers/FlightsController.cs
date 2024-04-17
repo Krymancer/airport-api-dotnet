@@ -1,6 +1,7 @@
-﻿using Airport.Contracts.Flights.Requests;
-using Airport.Contracts.Flights.Responses;
-using Application.Flights.Commands.CreateFlight;
+﻿using Application.Flights.Commands.CreateFlight;
+using Application.Flights.Queries.GetFlight;
+using Contracts.Flights.Requests;
+using Contracts.Flights.Responses;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
 
@@ -22,18 +23,27 @@ public class FlightsController : Controller
     {
         var command = new CreateFlightCommand(
             request.OriginIATACode,
-            request.DestiantionIATACode,
+            request.DestinationIATACode,
             request.Departure,
             request.Arrival);
 
-        var createFlightResponse = await _mediator.Send(command);
+        var createFlightResult = await _mediator.Send(command);
 
-        if (createFlightResponse.IsError)
-        {
-            return Problem();
-        }
+        return createFlightResult.MatchFirst(
+            flight => Ok(new CreateFlightResponse(flight.Number)),
+            error => Problem(error.Description)
+        );
+    }
 
-        var response = new CreateFlightResponse(createFlightResponse.Value);
-        return Ok(response);
+    [HttpGet("{flightId:guid}")]
+    public async Task<IActionResult> GetFlight(Guid flightId)
+    {
+        var query = new GetFlightQuery(flightId);
+        var getFlightResult = await _mediator.Send(query);
+
+        return getFlightResult.MatchFirst(
+            flight => Ok(new FlightResponse(flight.Number, flight.Departure, flight.Arrival)),
+            error => Problem(error.Description)
+        );
     }
 }

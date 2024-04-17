@@ -1,8 +1,8 @@
-﻿using Airport.Domain.Entities;
+﻿using Domain.Entities;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
-namespace Airport.Infrastructure.Persistence.EntitiesConfiguration;
+namespace Infrastructure.Common.Persistence.EntitiesConfiguration;
 
 public class TicketConfiguration: IEntityTypeConfiguration<Ticket>
 {

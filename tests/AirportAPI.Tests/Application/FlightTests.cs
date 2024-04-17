@@ -1,4 +1,4 @@
-﻿namespace Airport.Tests.Application;
+﻿namespace Tests.Application;
 
 public class FlightTests
 {

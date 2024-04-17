@@ -1,8 +1,7 @@
 ﻿using System.Linq.Expressions;
-using Airport.Infrastructure.Persistence.Repositories.Abstractions;
 using Microsoft.EntityFrameworkCore;
 
-namespace Airport.Infrastructure.Persistence.Repositories.Common;
+namespace Infrastructure.Common.Persistence.Repositories.Common;
 
 public abstract class BaseRepository<T> : IBaseRepository<T>
     where T : class

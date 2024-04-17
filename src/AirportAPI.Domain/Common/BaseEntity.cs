@@ -1,7 +1,7 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace Airport.Domain.Common;
+namespace Domain.Common;
 
 public class BaseEntity: IBaseEntity
 {

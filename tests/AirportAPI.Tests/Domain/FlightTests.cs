@@ -1,6 +1,6 @@
-﻿using Airport.Domain.Entities;
+﻿using Domain.Entities;
 
-namespace Airport.Tests.Domain;
+namespace Tests.Domain;
 
 public class FlightTests
 {
@@ -17,7 +17,7 @@ public class FlightTests
     [Fact]
     public void Flight_Should_Have_Different_Origin_and_Destination_Airports()
     {
-        var airport = new Airport.Domain.Entities.Airport();
+        var airport = new Airport();
         
         var flight = new Flight
         {

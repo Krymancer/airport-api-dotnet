@@ -7,12 +7,16 @@ namespace Infrastructure.Flights.Persistence;
 
 public class FlightRepository : IFlightRepository
 {
-    private static readonly AppDbContext _context;
+    private readonly AppDbContext _context;
+
+    public FlightRepository(AppDbContext context)
+    {
+        _context = context;
+    }
 
     public async Task AddFlightAsync(Flight flight)
     {
         await _context.Flights.AddAsync(flight);
-        await _context.SaveChangesAsync();
     }
 
     public async Task<Flight?> GetByIdAsync(Guid flightId)

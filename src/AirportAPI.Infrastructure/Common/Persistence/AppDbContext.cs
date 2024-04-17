@@ -1,9 +1,10 @@
-﻿using Domain.Entities;
+﻿using Application.Common.Interfaces;
+using Domain.Entities;
 using Microsoft.EntityFrameworkCore;
 
 namespace Infrastructure.Common.Persistence;
 
-public class AppDbContext : DbContext
+public class AppDbContext : DbContext, IUnityOfWork
 {
     public DbSet<Domain.Entities.Airport> Airports { get; set; } = null!;
     public DbSet<City> Cities { get; set; } = null!;
@@ -20,5 +21,10 @@ public class AppDbContext : DbContext
     protected override void OnModelCreating(ModelBuilder builder)
     {
         builder.ApplyConfigurationsFromAssembly(typeof(AppDbContext).Assembly);
+    }
+
+    public async Task CommitChangesAsync()
+    {
+        await base.SaveChangesAsync();
     }
 }

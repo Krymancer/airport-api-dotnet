@@ -2,12 +2,6 @@
 
 public class City
 {
-    public Guid Id { get; private set; }
-    public string Name { get; private set; }
-    public string UF { get; private set; }
-
-    public virtual IEnumerable<Airport>? Airports { get; private set; }
-
     public City(string name, string uf, Guid? id = null)
     {
         Name = name;
@@ -18,4 +12,10 @@ public class City
     private City()
     {
     }
+
+    public Guid Id { get; private set; }
+    public string Name { get; private set; }
+    public string UF { get; private set; }
+
+    public virtual IEnumerable<Airport>? Airports { get; }
 }

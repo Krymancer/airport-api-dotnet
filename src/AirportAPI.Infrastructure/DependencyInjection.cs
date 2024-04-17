@@ -1,5 +1,4 @@
-﻿using System.Configuration;
-using Application.Common.Interfaces;
+﻿using Application.Common.Interfaces;
 using Infrastructure.Common.Persistence;
 using Infrastructure.Flights.Persistence;
 using Microsoft.EntityFrameworkCore;

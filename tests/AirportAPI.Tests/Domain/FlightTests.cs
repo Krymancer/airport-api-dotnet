@@ -1,6 +1,4 @@
-﻿using Domain.Entities;
-
-namespace Tests.Domain;
+﻿namespace Tests.Domain;
 
 public class FlightTests
 {
@@ -13,6 +11,5 @@ public class FlightTests
     [Fact]
     public void Flight_Should_Have_Different_Origin_and_Destination_Airports()
     {
-
     }
 }

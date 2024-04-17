@@ -8,19 +8,18 @@
     </PropertyGroup>
 
     <ItemGroup>
-      <Folder Include="Common\" />
-      <Folder Include="Extensions\" />
+        <Folder Include="Common\"/>
     </ItemGroup>
 
     <ItemGroup>
-      <PackageReference Include="Microsoft.EntityFrameworkCore" Version="9.0.0-preview.3.24172.4" />
-      <PackageReference Include="Npgsql.EntityFrameworkCore.PostgreSQL" Version="9.0.0-preview.3" />
-      <PackageReference Include="System.Configuration.ConfigurationManager" Version="4.4.0" />
+        <PackageReference Include="Microsoft.EntityFrameworkCore" Version="9.0.0-preview.3.24172.4"/>
+        <PackageReference Include="Npgsql.EntityFrameworkCore.PostgreSQL" Version="9.0.0-preview.3"/>
+        <PackageReference Include="System.Configuration.ConfigurationManager" Version="4.4.0"/>
     </ItemGroup>
 
     <ItemGroup>
-      <ProjectReference Include="..\AirportAPI.Application\AirportAPI.Application.csproj" />
-      <ProjectReference Include="..\AirportAPI.Domain\AirportAPI.Domain.csproj" />
+        <ProjectReference Include="..\AirportAPI.Application\AirportAPI.Application.csproj"/>
+        <ProjectReference Include="..\AirportAPI.Domain\AirportAPI.Domain.csproj"/>
     </ItemGroup>
 
 </Project>

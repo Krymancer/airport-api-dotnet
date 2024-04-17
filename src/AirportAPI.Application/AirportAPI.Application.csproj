@@ -8,17 +8,13 @@
     </PropertyGroup>
 
     <ItemGroup>
-      <Folder Include="Extensions\" />
+        <PackageReference Include="ErrorOr" Version="2.0.1"/>
+        <PackageReference Include="MediatR" Version="12.2.0"/>
+        <PackageReference Include="MediatR.Contracts" Version="2.0.1"/>
     </ItemGroup>
 
     <ItemGroup>
-      <PackageReference Include="ErrorOr" Version="2.0.1" />
-      <PackageReference Include="MediatR" Version="12.2.0" />
-      <PackageReference Include="MediatR.Contracts" Version="2.0.1" />
-    </ItemGroup>
-
-    <ItemGroup>
-      <ProjectReference Include="..\AirportAPI.Domain\AirportAPI.Domain.csproj" />
+        <ProjectReference Include="..\AirportAPI.Domain\AirportAPI.Domain.csproj"/>
     </ItemGroup>
 
 </Project>

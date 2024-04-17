@@ -2,13 +2,6 @@
 
 public class Airport
 {
-    public Guid Id { get; private set; }
-    public string Name { get; private set; }
-    public string IATACode { get; private set; }
-    public Guid CityId { get; private set; }
-
-    public virtual City? City { get; private set; }
-
     public Airport(string iataCode, string name, Guid? id = null)
     {
         IATACode = iataCode;
@@ -19,4 +12,11 @@ public class Airport
     private Airport()
     {
     }
+
+    public Guid Id { get; private set; }
+    public string Name { get; private set; }
+    public string IATACode { get; private set; }
+    public Guid CityId { get; }
+
+    public virtual City? City { get; }
 }

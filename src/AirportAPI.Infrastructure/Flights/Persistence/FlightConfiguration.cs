@@ -12,7 +12,7 @@ public class FlightConfiguration : IEntityTypeConfiguration<Flight>
 
         builder.Property(flight => flight.Id)
             .ValueGeneratedNever();
-        
+
         builder.HasOne(flight => flight.OriginAirport)
             .WithOne()
             .HasForeignKey<Flight>(flight => flight.OriginAirportId);

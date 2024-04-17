@@ -19,7 +19,7 @@ public class GetFlightQueryHandler : IRequestHandler<GetFlightQuery, ErrorOr<Fli
         var flight = await _flightRepository.GetByIdAsync(request.FlightId);
 
         if (flight is null) return Error.NotFound("Fight Not Found");
-        
+
         return flight;
     }
 }

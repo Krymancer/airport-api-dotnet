@@ -1,11 +1,21 @@
-﻿using Domain.Common;
+﻿namespace Domain.Entities;
 
-namespace Domain.Entities;
-
-public class Luggage : BaseEntity
+public class Luggage
 {
-    public string Identification { get; set; } = string.Empty;
-    public Guid TicketId { get; set; }
-    
-    public virtual Ticket? Ticket { get; set; }
+    public Guid Id { get; private set; }
+    public string Identification { get; private set; }
+    public Guid TicketId { get; private set; }
+
+    public virtual Ticket? Ticket { get; private set; }
+
+    public Luggage(string identification, Guid ticketId, Guid? id)
+    {
+        Identification = identification;
+        TicketId = ticketId;
+        Id = id ?? Guid.NewGuid();
+    }
+
+    private Luggage()
+    {
+    }
 }

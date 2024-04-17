@@ -22,8 +22,9 @@ public class FlightsController : Controller
     public async Task<IActionResult> CreateFlight(CreateFlightRequest request)
     {
         var command = new CreateFlightCommand(
-            request.OriginIATACode,
-            request.DestinationIATACode,
+            request.FlightNumber,
+            request.OriginAirportId,
+            request.DestinationAiportId,
             request.Departure,
             request.Arrival);
 

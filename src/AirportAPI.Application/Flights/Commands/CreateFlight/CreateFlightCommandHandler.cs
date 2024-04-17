@@ -8,17 +8,25 @@ namespace Application.Flights.Commands.CreateFlight;
 public class CreateFlightCommandHandler : IRequestHandler<CreateFlightCommand, ErrorOr<Flight>>
 {
     private readonly IFlightRepository _flightRepository;
+    private readonly IUnityOfWork _unityOfWork;
 
-    public CreateFlightCommandHandler(IFlightRepository flightRepository)
+    public CreateFlightCommandHandler(IFlightRepository flightRepository, IUnityOfWork unityOfWork)
     {
         _flightRepository = flightRepository;
+        _unityOfWork = unityOfWork;
     }
 
     public async Task<ErrorOr<Flight>> Handle(CreateFlightCommand request, CancellationToken cancellationToken)
     {
-        var flight = new Flight();
+        var flight = new Flight(
+            request.FlightNumber,
+            request.Departure,
+            request.Arrival,
+            request.OriginAirport,
+            request.DestinationAiport
+        );
         await _flightRepository.AddFlightAsync(flight);
-
+        await _unityOfWork.CommitChangesAsync();
         return flight;
     }
 }

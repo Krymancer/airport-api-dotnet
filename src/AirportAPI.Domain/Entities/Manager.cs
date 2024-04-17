@@ -1,14 +1,29 @@
-﻿using Domain.Common;
+﻿namespace Domain.Entities;
 
-namespace Domain.Entities;
-
-public class Manager: BaseEntity
+public class Manager
 {
-    public string Name { get; set; } = string.Empty;
-    public string CPF { get; set; } = string.Empty;
-    public string Email { get; set; } = string.Empty;
-    public string Username { get; set; } = string.Empty;
-    public string Password { get; set; } = string.Empty;
-    public DateTime BirthDate { get; set; }
-    
+    public Guid Id { get; private set; }
+    public string Name { get; private set; }
+    public string CPF { get; private set; }
+    public string Email { get; private set; }
+    public string Username { get; private set; }
+    public string Password { get; private set; }
+    public DateTime BirthDate { get; private set; }
+
+    public Manager(
+        string name, string cpf, string email, string username, string password, DateTime birthDate, Guid? id
+    )
+    {
+        Name = name;
+        CPF = cpf;
+        Email = email;
+        Username = username;
+        Password = password;
+        BirthDate = birthDate;
+        Id = id ?? Guid.NewGuid();
+    }
+
+    private Manager()
+    {
+    }
 }

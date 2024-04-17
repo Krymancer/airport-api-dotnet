@@ -1,13 +1,25 @@
-﻿using Domain.Common;
+﻿namespace Domain.Entities;
 
-namespace Domain.Entities;
-
-public class Passenger : BaseEntity
+public class Passenger
 {
-    public string Name { get; set; } = string.Empty;
-    public string CPF { get; set; } = string.Empty;
-    public string Email { get; set; } = string.Empty;
-    public DateTime BirthDate { get; set; }
+    public Guid Id { get; private set; }
+    public string Name { get; private set; }
+    public string CPF { get; private set; }
+    public string Email { get; private set; }
+    public DateTime BirthDate { get; private set; }
 
-    public virtual IEnumerable<Ticket>? Tickets { get; set; }
+    public virtual IEnumerable<Ticket>? Tickets { get; private set; }
+
+    public Passenger(string name, string cpf, string email, DateTime birthDate, Guid? id = null)
+    {
+        Name = name;
+        CPF = cpf;
+        Email = email;
+        BirthDate = birthDate;
+        Id = id ?? Guid.NewGuid();
+    }
+
+    private Passenger()
+    {
+    }
 }

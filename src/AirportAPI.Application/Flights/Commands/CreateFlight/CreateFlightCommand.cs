@@ -5,7 +5,8 @@ using MediatR;
 namespace Application.Flights.Commands.CreateFlight;
 
 public record CreateFlightCommand(
-    string OriginIATACode,
-    string DestinationIATACode,
+    string FlightNumber,
+    Guid OriginAirport,
+    Guid DestinationAiport,
     DateTime Departure,
     DateTime Arrival) : IRequest<ErrorOr<Flight>>;

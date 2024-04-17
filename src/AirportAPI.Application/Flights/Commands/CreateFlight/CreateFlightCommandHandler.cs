@@ -1,12 +1,24 @@
-﻿using ErrorOr;
+﻿using Application.Common.Interfaces;
+using Domain.Entities;
+using ErrorOr;
 using MediatR;
 
 namespace Application.Flights.Commands.CreateFlight;
 
-public class CreateFlightCommandHandler : IRequestHandler<CreateFlightCommand, ErrorOr<string>>
+public class CreateFlightCommandHandler : IRequestHandler<CreateFlightCommand, ErrorOr<Flight>>
 {
-    public async Task<ErrorOr<string>> Handle(CreateFlightCommand request, CancellationToken cancellationToken)
+    private readonly IFlightRepository _flightRepository;
+
+    public CreateFlightCommandHandler(IFlightRepository flightRepository)
     {
-        return Error.Unexpected("IATA", "Wow an error");
+        _flightRepository = flightRepository;
+    }
+
+    public async Task<ErrorOr<Flight>> Handle(CreateFlightCommand request, CancellationToken cancellationToken)
+    {
+        var flight = new Flight();
+        await _flightRepository.AddFlightAsync(flight);
+
+        return flight;
     }
 }

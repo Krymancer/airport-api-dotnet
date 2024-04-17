@@ -1,3 +1,3 @@
-﻿namespace Airport.Contracts.Flights.Requests;
+﻿namespace Contracts.Flights.Requests;
 
-public record CreateFlightRequest(string OriginIATACode, string DestiantionIATACode, DateTime Departure, DateTime Arrival);
+public record CreateFlightRequest(string OriginIATACode, string DestinationIATACode, DateTime Departure, DateTime Arrival);

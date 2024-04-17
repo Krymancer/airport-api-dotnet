@@ -1,4 +1,4 @@
-﻿namespace Airport.Contracts.Flights.Responses;
+﻿namespace Contracts.Flights.Responses;
 
 public record CreateFlightResponse(
         string FlightNumber

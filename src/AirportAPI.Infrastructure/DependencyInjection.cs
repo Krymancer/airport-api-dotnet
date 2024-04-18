@@ -1,4 +1,5 @@
 ﻿using Application.Common.Interfaces;
+using Infrastructure.Cities.Persistence;
 using Infrastructure.Common.Persistence;
 using Infrastructure.Flights.Persistence;
 using Microsoft.EntityFrameworkCore;
@@ -14,6 +15,8 @@ public static class DependencyInjection
         services.AddDbContext<AppDbContext>(options => options.UseNpgsql(configuration.GetConnectionString("Default")));
         services.AddScoped<IUnityOfWork>(serviceProvider => serviceProvider.GetRequiredService<AppDbContext>());
         services.AddScoped<IFlightRepository, FlightRepository>();
+        services.AddScoped<ICityRepository, CityRepository>();
+        
         return services;
     }
 }

@@ -17,5 +17,5 @@ public class City
     public string Name { get; private set; }
     public string UF { get; private set; }
 
-    public virtual IEnumerable<Airport>? Airports { get; }
+    public virtual IEnumerable<Airport>? Airports { get; private set; }
 }

@@ -19,8 +19,20 @@ public class CityRepository: ICityRepository
         await _context.Cities.AddAsync(city);
     }
 
-    public async Task<IEnumerable<City>> GetAll()
+    public async Task<IEnumerable<City>> ListCities()
     {
         return await _context.Cities.ToListAsync();
+    }
+
+    public async Task<City?> GetByIdAsync(Guid cityId)
+    {
+        return await _context.Cities.FirstOrDefaultAsync(city => city.Id == cityId);
+    }
+
+    public Task RemoveCityAsync(City city)
+    {
+        _context.Cities.Remove(city);
+
+        return Task.CompletedTask;
     }
 }

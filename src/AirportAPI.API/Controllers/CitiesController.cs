@@ -1,5 +1,7 @@
 ﻿using Application.Cities.Commands.CreateCity;
-using Application.Cities.Queries.GetCitiesQuery;
+using Application.Cities.Commands.DeleteCity;
+using Application.Cities.Queries.GetCityById;
+using Application.Cities.Queries.ListCities;
 using Contracts.Cities;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
@@ -20,19 +22,25 @@ public class CitiesController : Controller
     [HttpGet]
     public async Task<IActionResult> GetAll()
     {
-        var getCititesQuery = new GetCitiesQuery();
+        var getCititesQuery = new ListCitiesQuery();
         var getCitiesQueryResult = await _mediator.Send(getCititesQuery);
 
         return getCitiesQueryResult.Match(
             cities => Ok(cities),
-            err => Problem()
+            _ => Problem()
         );
     }
 
     [HttpGet("{cityId:guid}")]
     public async Task<IActionResult> Get(Guid cityId)
     {
-        return Ok(cityId);
+        var getCityByIdQuery = new GetCityByIdQuery(cityId);
+        var getCityByIdQueryResult = await _mediator.Send(getCityByIdQuery);
+
+        return getCityByIdQueryResult.Match(
+            city => Ok(city),
+            _ => Problem()
+        );
     }
 
     [HttpPost]
@@ -47,13 +55,20 @@ public class CitiesController : Controller
 
         return createCityCommandResult.Match(
             city => CreatedAtAction(nameof(Get), new { cityId = city.Id }, city),
-            err => Problem()
+            _ => Problem()
         );
     }
 
     [HttpDelete("{cityId:guid}")]
     public async Task<IActionResult> Delete(Guid cityId)
     {
-        return NoContent();
+        var deleteCityCommand = new DeleteCityCommand(cityId);
+
+        var deleteCityCommandResult = await _mediator.Send(deleteCityCommand);
+
+        return deleteCityCommandResult.Match<IActionResult>(
+            _ => NoContent(),
+            _ => Problem()
+        );
     }
 }

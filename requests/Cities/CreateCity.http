@@ -1,0 +1,9 @@
+﻿@host=https://localhost:7227
+
+POST {{host}}/Cities
+Content-Type: application/json
+
+{
+  "Name": "São Paulo",
+  "UF": "SP"
+}

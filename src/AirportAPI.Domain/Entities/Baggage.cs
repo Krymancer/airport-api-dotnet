@@ -17,5 +17,5 @@ public class Baggage
     public string Identification { get; private set; }
     public Guid TicketId { get; private set; }
 
-    public virtual Ticket? Ticket { get; }
+    public virtual Ticket? Ticket { get; private set; }
 }

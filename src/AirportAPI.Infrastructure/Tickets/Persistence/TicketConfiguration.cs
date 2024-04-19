@@ -22,6 +22,6 @@ public class TicketConfiguration : IEntityTypeConfiguration<Ticket>
             .HasForeignKey(ticket => ticket.FlightId);
 
         builder.HasOne(ticket => ticket.Luggage).WithOne(luggage => luggage.Ticket)
-            .HasForeignKey<Domain.Entities.Baggage>(Luggage => Luggage.TicketId);
+            .HasForeignKey<Baggage>(baggage => baggage.TicketId);
     }
 }

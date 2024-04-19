@@ -1,0 +1,3 @@
+﻿@host=https://localhost:7227
+
+DELETE {{host}}/Cities/36cb046e-3ca3-440f-aa62-2c0fa5df2b6c

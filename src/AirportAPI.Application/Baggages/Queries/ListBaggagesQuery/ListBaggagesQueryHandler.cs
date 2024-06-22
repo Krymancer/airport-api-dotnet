@@ -3,22 +3,21 @@ using Domain.Entities;
 using ErrorOr;
 using MediatR;
 
-namespace Application.Airports.Queries.ListAirportsQuery;
+namespace Application.Baggages.Queries.ListBaggagesQuery;
 
-public class ListBaggagesQueryHandler : IRequestHandler<ListAirportsQuery, ErrorOr<IEnumerable<Airport>>>
+public class ListBaggagesQueryHandler : IRequestHandler<ListBaggagesQuery, ErrorOr<IEnumerable<Baggage>>>
 {
-    private readonly IAirportRepository _airportRepository;
+    private readonly IBaggageRepository _baggageRepository;
 
-    public ListBaggagesQueryHandler(IAirportRepository airportRepository)
+    public ListBaggagesQueryHandler(IBaggageRepository baggageRepository)
     {
-        _airportRepository = airportRepository;
+        _baggageRepository = baggageRepository;
     }
 
-    public async Task<ErrorOr<IEnumerable<Airport>>> Handle(ListAirportsQuery request,
+    public async Task<ErrorOr<IEnumerable<Baggage>>> Handle(ListBaggagesQuery request,
         CancellationToken cancellationToken)
     {
-        var airports = await _airportRepository.ListAirports();
-
-        return ErrorOrFactory.From(airports);
+        var baggages = await _baggageRepository.ListBaggages();
+        return ErrorOrFactory.From(baggages);
     }
 }

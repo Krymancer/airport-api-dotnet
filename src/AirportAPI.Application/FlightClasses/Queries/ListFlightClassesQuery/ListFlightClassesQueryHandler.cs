@@ -7,9 +7,9 @@ namespace Application.FlightClasses.Queries.ListFlightClassesQuery;
 
 public class ListFlightClassesQueryHandler : IRequestHandler<ListFlightClassesQuery, ErrorOr<IEnumerable<FlightClass>>>
 {
-    private readonly IFlightClassesRepository _flightClassRepository;
+    private readonly IFlightClassRepository _flightClassRepository;
 
-    public ListFlightClassesQueryHandler(IFlightClassesRepository flightClassRepository)
+    public ListFlightClassesQueryHandler(IFlightClassRepository flightClassRepository)
     {
         _flightClassRepository = flightClassRepository;
     }

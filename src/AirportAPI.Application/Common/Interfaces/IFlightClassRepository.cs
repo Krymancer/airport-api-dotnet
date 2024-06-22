@@ -2,7 +2,7 @@
 
 namespace Application.Common.Interfaces;
 
-public interface IFlightClassesRepository
+public interface IFlightClassRepository
 {
     Task AddFlightClassAsync(FlightClass flightClass);
     Task<IEnumerable<FlightClass>> FlightClasses();

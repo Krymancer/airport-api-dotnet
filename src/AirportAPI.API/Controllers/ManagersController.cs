@@ -1,3 +1,9 @@
+using Application.Managers.Commands.CreateManagerCommand;
+using Application.Managers.Commands.DeleteManagerCommand;
+using Application.Managers.Commands.UpdateManagerCommand;
+using Application.Managers.Queries.GetManagerByIdQuery;
+using Application.Managers.Queries.ListManagersQuery;
+using Contracts.Managers;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
 
@@ -61,7 +67,8 @@ public class ManagersController : Controller
     [HttpPost("{managerId:guid}")]
     public async Task<IActionResult> Update(Guid managerId, UpdateManagerRequest request)
     {
-        var command = new UpdateManagerCommand(managerId, request.Name, request.CPF, request.Email, request.Username);
+        var command = new UpdateManagerCommand(managerId, request.Name, request.CPF, request.Email, request.Username,
+            request.Password, request.BirthDate);
 
         var result = await _mediator.Send(command);
 

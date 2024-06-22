@@ -8,10 +8,10 @@ namespace Application.FlightClasses.Commands.CreateFlightClassesCommand;
 
 public class CreateFlightClassCommandHandler : IRequestHandler<CreateFlightClassCommand, ErrorOr<FlightClass>>
 {
-    private readonly IFlightClassesRepository _flightClassRepository;
+    private readonly IFlightClassRepository _flightClassRepository;
     private readonly IUnityOfWork _unityOfWork;
 
-    public CreateFlightClassCommandHandler(IFlightClassesRepository flightClassRepository, IUnityOfWork unityOfWork)
+    public CreateFlightClassCommandHandler(IFlightClassRepository flightClassRepository, IUnityOfWork unityOfWork)
     {
         _flightClassRepository = flightClassRepository;
         _unityOfWork = unityOfWork;

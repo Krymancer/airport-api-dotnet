@@ -6,10 +6,10 @@ namespace Application.FlightClasses.Commands.DeleteFlightClassesCommand;
 
 public class DeleteFlightClassCommandHandler : IRequestHandler<DeleteFlightClassCommand, ErrorOr<Deleted>>
 {
-    private readonly IFlightClassesRepository _flightClassRepository;
+    private readonly IFlightClassRepository _flightClassRepository;
     private readonly IUnityOfWork _unityOfWork;
 
-    public DeleteFlightClassCommandHandler(IFlightClassesRepository flightClassRepository, IUnityOfWork unityOfWork)
+    public DeleteFlightClassCommandHandler(IFlightClassRepository flightClassRepository, IUnityOfWork unityOfWork)
     {
         _flightClassRepository = flightClassRepository;
         _unityOfWork = unityOfWork;

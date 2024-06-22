@@ -29,4 +29,9 @@ public class Ticket
     public virtual Passenger? Passenger { get; }
     public virtual Flight? Flight { get; }
     public virtual Baggage? Luggage { get; }
+
+    public void Update(string requestIdentification, double requestPrice, int requestSeatNumber, Guid requestFlightId, Guid requestPassengerId, bool requestLuggageCheckIn)
+    {
+        throw new NotImplementedException();
+    }
 }

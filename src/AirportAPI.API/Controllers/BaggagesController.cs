@@ -1,7 +1,7 @@
-using Application.Airports.Queries.ListAirportsQuery;
 using Application.Baggages.Commands.CreateBaggageCommand;
 using Application.Baggages.Commands.DeleteBaggageCommand;
 using Application.Baggages.Commands.UpdateBaggageCommand;
+using Application.Baggages.Queries.ListBaggagesQuery;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
 

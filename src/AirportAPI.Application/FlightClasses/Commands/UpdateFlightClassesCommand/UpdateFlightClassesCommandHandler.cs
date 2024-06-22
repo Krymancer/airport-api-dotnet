@@ -7,10 +7,10 @@ namespace Application.FlightClasses.Commands.UpdateFlightClassesCommand;
 
 public class UpdateFlightClassCommandHandler : IRequestHandler<UpdateFlightClassCommand, ErrorOr<Updated>>
 {
-    private readonly IFlightClassesRepository _flightClassRepository;
+    private readonly IFlightClassRepository _flightClassRepository;
     private readonly IUnityOfWork _unityOfWork;
 
-    public UpdateFlightClassCommandHandler(IFlightClassesRepository flightClassRepository, IUnityOfWork unityOfWork)
+    public UpdateFlightClassCommandHandler(IFlightClassRepository flightClassRepository, IUnityOfWork unityOfWork)
     {
         _flightClassRepository = flightClassRepository;
         _unityOfWork = unityOfWork;
@@ -22,7 +22,7 @@ public class UpdateFlightClassCommandHandler : IRequestHandler<UpdateFlightClass
 
         if (flightClass is null) return Error.NotFound();
 
-        flightClass.Update(request.flightClass, request.seats, request.seatPrice);
+        flightClass.Update(request.FlightClass, request.Seats, request.SeatPrice);
 
         var validator = new FlightClassValidator();
         var validationResult = await validator.ValidateAsync(flightClass, cancellationToken);

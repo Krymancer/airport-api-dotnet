@@ -7,9 +7,9 @@ namespace Application.FlightClasses.Queries.GetFlightClassesByIdQuery;
 
 public class GetFlightClassByIdQueryHandler : IRequestHandler<GetFlightClassByIdQuery, ErrorOr<FlightClass>>
 {
-    private readonly IFlightClassesRepository _airportRepository;
+    private readonly IFlightClassRepository _airportRepository;
 
-    public GetFlightClassByIdQueryHandler(IFlightClassesRepository airportRepository)
+    public GetFlightClassByIdQueryHandler(IFlightClassRepository airportRepository)
     {
         _airportRepository = airportRepository;
     }

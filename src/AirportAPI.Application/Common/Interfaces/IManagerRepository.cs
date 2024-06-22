@@ -2,7 +2,7 @@
 
 namespace Application.Common.Interfaces;
 
-public interface IManagersRepository
+public interface IManagerRepository
 {
     Task AddManagerAsync(Manager manager);
     Task<IEnumerable<Manager>> ListManagers();

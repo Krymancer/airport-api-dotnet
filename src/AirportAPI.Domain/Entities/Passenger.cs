@@ -22,4 +22,9 @@ public class Passenger
     public DateTime BirthDate { get; private set; }
 
     public virtual IEnumerable<Ticket>? Tickets { get; }
+
+    public void Update(string requestName, string requestCpf, string requestEmail, DateTime birthDate)
+    {
+        throw new NotImplementedException();
+    }
 }

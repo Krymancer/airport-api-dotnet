@@ -1,3 +1,9 @@
+using Application.Tickets.Commands.CreateTicketCommand;
+using Application.Tickets.Commands.DeleteTicketCommand;
+using Application.Tickets.Commands.UpdateTicketCommand;
+using Application.Tickets.Queries.GetTicketByIdQuery;
+using Application.Tickets.Queries.ListTicketsQuery;
+using Contracts.Tickets;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
 
@@ -61,7 +67,9 @@ public class TicketsController : Controller
     [HttpPost("{ticketId:guid}")]
     public async Task<IActionResult> Update(Guid ticketId, UpdateTicketRequest request)
     {
-        var command = new UpdateTicketCommand(ticketId, request.Price, request.SeatNumber, request.LuggageCheckIn);
+        var command = new UpdateTicketCommand(ticketId, request.Identification, request.Price, request.SeatNumber,
+            request.FlightId,
+            request.PassengerId, request.LuggageCheckIn);
 
         var result = await _mediator.Send(command);
 

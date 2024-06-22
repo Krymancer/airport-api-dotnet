@@ -3,9 +3,9 @@ using Domain.Entities;
 using ErrorOr;
 using MediatR;
 
-namespace Application.Airports.Queries.GetAirportById;
+namespace Application.Baggages.Queries.GetBaggageByIdQuery;
 
-public class GetBaggageByIdQueryHandler : IRequestHandler<GetAirportByIdQuery.GetAirportByIdQuery, ErrorOr<Airport>>
+public class GetBaggageByIdQueryHandler : IRequestHandler<global::GetBaggageByIdQuery, ErrorOr<Airport>>
 {
     private readonly IAirportRepository _airportRepository;
 
@@ -14,8 +14,7 @@ public class GetBaggageByIdQueryHandler : IRequestHandler<GetAirportByIdQuery.Ge
         _airportRepository = airportRepository;
     }
 
-    public async Task<ErrorOr<Airport>> Handle(GetAirportByIdQuery.GetAirportByIdQuery request,
-        CancellationToken cancellationToken)
+    public async Task<ErrorOr<Airport>> Handle(global::GetBaggageByIdQuery request, CancellationToken cancellationToken)
     {
         var airport = await _airportRepository.GetByIdAsync(request.AirportId);
 

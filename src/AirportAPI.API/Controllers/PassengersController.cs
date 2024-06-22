@@ -1,3 +1,9 @@
+using Application.Passengers.Commands.CreatePassengerCommand;
+using Application.Passengers.Commands.DeletePassengerCommand;
+using Application.Passengers.Commands.UpdatePassengerCommand;
+using Application.Passengers.Queries.GetPassengerByIdQuery;
+using Application.Passengers.Queries.ListPassengersQuery;
+using Contracts.Passenger;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
 
@@ -59,7 +65,7 @@ public class PassengersController : Controller
     [HttpPost("{passengerId:guid}")]
     public async Task<IActionResult> Update(Guid passengerId, UpdatePassengerRequest request)
     {
-        var command = new UpdatePassengerCommand(passengerId, request.Name, request.CPF, request.Email);
+        var command = new UpdatePassengerCommand(passengerId, request.Name, request.CPF, request.Email, request.BirthDate);
 
         var result = await _mediator.Send(command);
 

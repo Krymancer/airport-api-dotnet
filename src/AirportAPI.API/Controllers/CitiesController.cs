@@ -1,5 +1,6 @@
 ﻿using Application.Cities.Commands.CreateCity;
 using Application.Cities.Commands.DeleteCity;
+using Application.Cities.Commands.UpdateCity;
 using Application.Cities.Queries.GetCityById;
 using Application.Cities.Queries.ListCities;
 using Contracts.Cities;
@@ -22,8 +23,8 @@ public class CitiesController : Controller
     [HttpGet]
     public async Task<IActionResult> GetAll()
     {
-        var getCititesQuery = new ListCitiesQuery();
-        var getCitiesQueryResult = await _mediator.Send(getCititesQuery);
+        var getCitiesQuery = new ListCitiesQuery();
+        var getCitiesQueryResult = await _mediator.Send(getCitiesQuery);
 
         return getCitiesQueryResult.Match(
             cities => Ok(cities),
@@ -55,6 +56,19 @@ public class CitiesController : Controller
 
         return createCityCommandResult.Match(
             city => CreatedAtAction(nameof(Get), new { cityId = city.Id }, city),
+            _ => Problem()
+        );
+    }
+
+    [HttpPost("{cityId:guid}")]
+    public async Task<IActionResult> Update(Guid cityId)
+    {
+        var updateCityCommand = new UpdateCityCommand(cityId);
+        
+        var updateCityCommandResult = await _mediator.Send(updateCityCommand);
+
+        return updateCityCommandResult.Match<IActionResult>(
+            _ => NoContent(),
             _ => Problem()
         );
     }

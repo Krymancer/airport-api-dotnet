@@ -3,6 +3,6 @@
 public record CreateFlightRequest(
     string FlightNumber,
     Guid OriginAirportId,
-    Guid DestinationAiportId,
+    Guid DestinationAirportId,
     DateTime Departure,
     DateTime Arrival);

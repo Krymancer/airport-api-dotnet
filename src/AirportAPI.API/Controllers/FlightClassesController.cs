@@ -1,3 +1,9 @@
+using Application.FlightClasses.Commands.CreateFlightClassesCommand;
+using Application.FlightClasses.Commands.DeleteFlightClassesCommand;
+using Application.FlightClasses.Commands.UpdateFlightClassesCommand;
+using Application.FlightClasses.Queries.GetFlightClassesByIdQuery;
+using Application.FlightClasses.Queries.ListFlightClassesQuery;
+using Contracts.FlightClasses;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
 
@@ -42,7 +48,7 @@ public class FlightClassesController : Controller
     public async Task<IActionResult> Create(CreateFlightClassRequest request)
     {
         var command = new CreateFlightClassCommand(
-            request.Class,
+            request.FlightClass,
             request.Seats,
             request.SeatPrice,
             request.FlightId
@@ -59,7 +65,8 @@ public class FlightClassesController : Controller
     [HttpPost("{flightClassId:guid}")]
     public async Task<IActionResult> Update(Guid flightClassId, UpdateFlightClassRequest request)
     {
-        var command = new UpdateFlightClassCommand(flightClassId, request.Seats, request.SeatPrice);
+        var command = new UpdateFlightClassCommand(flightClassId, request.FlightClass, request.Seats, request.SeatPrice,
+            request.FlightId);
 
         var result = await _mediator.Send(command);
 

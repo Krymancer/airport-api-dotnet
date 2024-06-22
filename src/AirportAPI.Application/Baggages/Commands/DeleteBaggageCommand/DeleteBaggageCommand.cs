@@ -3,4 +3,4 @@ using MediatR;
 
 namespace Application.Baggages.Commands.DeleteBaggageCommand;
 
-public record DeleteBaggageCommand(Guid BaggageId): IRequest<ErrorOr<Deleted>>;
+public record DeleteBaggageCommand(Guid BaggageId) : IRequest<ErrorOr<Deleted>>;

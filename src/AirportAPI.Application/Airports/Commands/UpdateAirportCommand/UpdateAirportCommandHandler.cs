@@ -4,7 +4,7 @@ using MediatR;
 
 namespace Application.Airports.Commands.UpdateAirportCommand;
 
-public class UpdateAirportCommandHandler : IRequestHandler<global::UpdateAirportCommand, ErrorOr<Updated>>
+public class UpdateAirportCommandHandler : IRequestHandler<UpdateAirportCommand, ErrorOr<Updated>>
 {
     private readonly IAirportRepository _airportRepository;
     private readonly IUnityOfWork _unityOfWork;
@@ -15,7 +15,7 @@ public class UpdateAirportCommandHandler : IRequestHandler<global::UpdateAirport
         _unityOfWork = unityOfWork;
     }
 
-    public async Task<ErrorOr<Updated>> Handle(global::UpdateAirportCommand request, CancellationToken cancellationToken)
+    public async Task<ErrorOr<Updated>> Handle(UpdateAirportCommand request, CancellationToken cancellationToken)
     {
         var airport = await _airportRepository.GetByIdAsync(request.AirportId);
 

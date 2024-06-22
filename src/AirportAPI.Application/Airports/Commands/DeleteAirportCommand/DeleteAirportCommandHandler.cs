@@ -15,7 +15,8 @@ public class DeleteAirportCommandHandler : IRequestHandler<DeleteAirportCommand.
         _unityOfWork = unityOfWork;
     }
 
-    public async Task<ErrorOr<Deleted>> Handle(DeleteAirportCommand.DeleteAirportCommand request, CancellationToken cancellationToken)
+    public async Task<ErrorOr<Deleted>> Handle(DeleteAirportCommand.DeleteAirportCommand request,
+        CancellationToken cancellationToken)
     {
         var airport = await _airportRepository.GetByIdAsync(request.AirportId);
 

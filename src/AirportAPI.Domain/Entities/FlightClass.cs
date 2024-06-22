@@ -4,7 +4,7 @@ namespace Domain.Entities;
 
 public class FlightClass
 {
-    public FlightClass(FlightClassesEnum flightClass, int seats, double seatPrice, Guid flightId, Guid? id)
+    public FlightClass(FlightClassesEnum flightClass, int seats, double seatPrice, Guid flightId, Guid? id = null)
     {
         Class = flightClass;
         Seats = seats;
@@ -23,4 +23,9 @@ public class FlightClass
     public Guid FlightId { get; private set; }
 
     public virtual Flight? Flight { get; }
+
+    public void Update(FlightClassesEnum requestFlightClass, int requestSeats, double requestSeatPrice)
+    {
+        throw new NotImplementedException();
+    }
 }

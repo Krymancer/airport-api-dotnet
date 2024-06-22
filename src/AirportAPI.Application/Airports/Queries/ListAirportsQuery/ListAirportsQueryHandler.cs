@@ -14,7 +14,7 @@ public class ListAirportsQueryHandler : IRequestHandler<ListAirportsQuery, Error
         _airportRepository = airportRepository;
     }
 
-    public async Task<ErrorOr<IEnumerable<Airport>>> Handle(Queries.ListAirportsQuery.ListAirportsQuery request,
+    public async Task<ErrorOr<IEnumerable<Airport>>> Handle(ListAirportsQuery request,
         CancellationToken cancellationToken)
     {
         var airports = await _airportRepository.ListAirports();

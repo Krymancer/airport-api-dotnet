@@ -17,7 +17,7 @@ public class CreateAirportCommandHandler : IRequestHandler<CreateAirportCommand,
         _unityOfWork = unityOfWork;
     }
 
-    public async Task<ErrorOr<Airport>> Handle(Commands.CreateAirportCommand.CreateAirportCommand request, CancellationToken cancellationToken)
+    public async Task<ErrorOr<Airport>> Handle(CreateAirportCommand request, CancellationToken cancellationToken)
     {
         var airport = new Airport(request.IATACode, request.Name, request.CityId);
         var validator = new AirportValidator();

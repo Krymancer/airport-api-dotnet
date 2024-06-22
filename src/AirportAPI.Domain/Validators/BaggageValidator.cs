@@ -3,7 +3,7 @@ using FluentValidation;
 
 namespace Domain.Validators;
 
-public class BaggageValidator: AbstractValidator<Baggage>
+public class BaggageValidator : AbstractValidator<Baggage>
 {
     public BaggageValidator()
     {

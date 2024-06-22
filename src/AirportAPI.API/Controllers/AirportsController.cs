@@ -1,6 +1,9 @@
 ﻿using Application.Airports.Commands.CreateAirportCommand;
 using Application.Airports.Commands.DeleteAirportCommand;
+using Application.Airports.Commands.UpdateAirportCommand;
+using Application.Airports.Queries.GetAirportByIdQuery;
 using Application.Airports.Queries.ListAirportsQuery;
+using Contracts.Airports;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
 

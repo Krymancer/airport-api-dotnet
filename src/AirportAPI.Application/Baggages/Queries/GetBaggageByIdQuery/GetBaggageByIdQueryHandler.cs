@@ -5,7 +5,7 @@ using MediatR;
 
 namespace Application.Airports.Queries.GetAirportById;
 
-public class GetBaggageByIdQueryHandler : IRequestHandler<GetAirportByIdQuery, ErrorOr<Airport>>
+public class GetBaggageByIdQueryHandler : IRequestHandler<GetAirportByIdQuery.GetAirportByIdQuery, ErrorOr<Airport>>
 {
     private readonly IAirportRepository _airportRepository;
 
@@ -14,7 +14,8 @@ public class GetBaggageByIdQueryHandler : IRequestHandler<GetAirportByIdQuery, E
         _airportRepository = airportRepository;
     }
 
-    public async Task<ErrorOr<Airport>> Handle(GetAirportByIdQuery request, CancellationToken cancellationToken)
+    public async Task<ErrorOr<Airport>> Handle(GetAirportByIdQuery.GetAirportByIdQuery request,
+        CancellationToken cancellationToken)
     {
         var airport = await _airportRepository.GetByIdAsync(request.AirportId);
 

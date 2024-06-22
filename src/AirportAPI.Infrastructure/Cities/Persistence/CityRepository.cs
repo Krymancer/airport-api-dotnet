@@ -5,7 +5,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace Infrastructure.Cities.Persistence;
 
-public class CityRepository: ICityRepository
+public class CityRepository : ICityRepository
 {
     private readonly AppDbContext _context;
 
@@ -29,10 +29,15 @@ public class CityRepository: ICityRepository
         return await _context.Cities.FirstOrDefaultAsync(city => city.Id == cityId);
     }
 
+    public Task UpdateCityAsync(City city)
+    {
+        _context.Cities.Update(city);
+        return Task.CompletedTask;
+    }
+
     public Task RemoveCityAsync(City city)
     {
         _context.Cities.Remove(city);
-
         return Task.CompletedTask;
     }
 }

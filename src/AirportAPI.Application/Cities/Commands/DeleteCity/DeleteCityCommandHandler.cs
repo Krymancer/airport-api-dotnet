@@ -4,7 +4,7 @@ using MediatR;
 
 namespace Application.Cities.Commands.DeleteCity;
 
-public class DeleteCityCommandHandler: IRequestHandler<DeleteCityCommand, ErrorOr<Deleted>>
+public class DeleteCityCommandHandler : IRequestHandler<DeleteCityCommand, ErrorOr<Deleted>>
 {
     private readonly ICityRepository _cityRepository;
     private readonly IUnityOfWork _unityOfWork;
@@ -23,7 +23,7 @@ public class DeleteCityCommandHandler: IRequestHandler<DeleteCityCommand, ErrorO
 
         await _cityRepository.RemoveCityAsync(city);
         await _unityOfWork.CommitChangesAsync();
-        
+
         return Result.Deleted;
     }
 }

@@ -23,7 +23,7 @@ public class CreateFlightCommandHandler : IRequestHandler<CreateFlightCommand, E
             request.Departure,
             request.Arrival,
             request.OriginAirport,
-            request.DestinationAiport
+            request.DestinationAirport
         );
         await _flightRepository.AddFlightAsync(flight);
         await _unityOfWork.CommitChangesAsync();

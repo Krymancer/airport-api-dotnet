@@ -21,7 +21,7 @@ public class FlightsController : Controller
         _mediator = mediator;
     }
 
-    
+
     [HttpGet]
     public async Task<IActionResult> GetAll()
     {

@@ -5,7 +5,7 @@ using MediatR;
 
 namespace Application.Cities.Queries.ListCities;
 
-public class ListCitiesQueryHandler: IRequestHandler<ListCitiesQuery, ErrorOr<IEnumerable<City>>>
+public class ListCitiesQueryHandler : IRequestHandler<ListCitiesQuery, ErrorOr<IEnumerable<City>>>
 {
     private readonly ICityRepository _cityRepository;
 

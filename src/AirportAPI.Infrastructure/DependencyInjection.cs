@@ -16,7 +16,7 @@ public static class DependencyInjection
         services.AddScoped<IUnityOfWork>(serviceProvider => serviceProvider.GetRequiredService<AppDbContext>());
         services.AddScoped<IFlightRepository, FlightRepository>();
         services.AddScoped<ICityRepository, CityRepository>();
-        
+
         return services;
     }
 }

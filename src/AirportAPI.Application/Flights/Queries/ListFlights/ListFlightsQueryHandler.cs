@@ -5,7 +5,7 @@ using MediatR;
 
 namespace Application.Flights.Queries.ListFlights;
 
-public class ListFlightsQueryHandler: IRequestHandler<ListFlightsQuery, ErrorOr<IEnumerable<Flight>>>
+public class ListFlightsQueryHandler : IRequestHandler<ListFlightsQuery, ErrorOr<IEnumerable<Flight>>>
 {
     private readonly IFlightRepository _flightRepository;
 
@@ -14,7 +14,8 @@ public class ListFlightsQueryHandler: IRequestHandler<ListFlightsQuery, ErrorOr<
         _flightRepository = FlightRepository;
     }
 
-    public async Task<ErrorOr<IEnumerable<Flight>>> Handle(ListFlightsQuery request, CancellationToken cancellationToken)
+    public async Task<ErrorOr<IEnumerable<Flight>>> Handle(ListFlightsQuery request,
+        CancellationToken cancellationToken)
     {
         var fligths = await _flightRepository.ListFlights();
 

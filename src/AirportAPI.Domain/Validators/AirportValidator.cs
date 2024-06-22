@@ -3,7 +3,7 @@ using FluentValidation;
 
 namespace Domain.Validators;
 
-public class AirportValidator: AbstractValidator<Airport>
+public class AirportValidator : AbstractValidator<Airport>
 {
     public AirportValidator()
     {

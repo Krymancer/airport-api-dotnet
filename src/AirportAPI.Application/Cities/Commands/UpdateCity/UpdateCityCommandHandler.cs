@@ -1,11 +1,10 @@
-﻿using Application.Cities.Commands.DeleteCity;
-using Application.Common.Interfaces;
+﻿using Application.Common.Interfaces;
 using ErrorOr;
 using MediatR;
 
 namespace Application.Cities.Commands.UpdateCity;
 
-public class UpdateCityCommandHandler: IRequestHandler<UpdateCityCommand, ErrorOr<Updated>>
+public class UpdateCityCommandHandler : IRequestHandler<UpdateCityCommand, ErrorOr<Updated>>
 {
     private readonly ICityRepository _cityRepository;
     private readonly IUnityOfWork _unityOfWork;
@@ -24,7 +23,7 @@ public class UpdateCityCommandHandler: IRequestHandler<UpdateCityCommand, ErrorO
 
         await _cityRepository.UpdateCityAsync(city);
         await _unityOfWork.CommitChangesAsync();
-        
+
         return Result.Updated;
     }
 }

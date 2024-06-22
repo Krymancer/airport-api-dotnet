@@ -1,0 +1,1 @@
+public record UpdateAirportRequest(string IATACode, string Name);

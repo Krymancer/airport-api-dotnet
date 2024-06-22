@@ -1,5 +1,4 @@
 ﻿using Application.Common.Interfaces;
-using Domain.Entities;
 using ErrorOr;
 using MediatR;
 
@@ -24,7 +23,7 @@ public class DeleteFlightCommandHandler : IRequestHandler<DeleteFlightCommand, E
 
         await _flightRepository.RemoveFlightAsync(flight);
         await _unityOfWork.CommitChangesAsync();
-        
-        return Result.Deleted; 
+
+        return Result.Deleted;
     }
 }

@@ -64,7 +64,7 @@ public class CitiesController : Controller
     public async Task<IActionResult> Update(Guid cityId)
     {
         var updateCityCommand = new UpdateCityCommand(cityId);
-        
+
         var updateCityCommandResult = await _mediator.Send(updateCityCommand);
 
         return updateCityCommandResult.Match<IActionResult>(

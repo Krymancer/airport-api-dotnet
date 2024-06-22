@@ -4,4 +4,4 @@ using MediatR;
 
 namespace Application.Cities.Commands.CreateCity;
 
-public record CreateCityCommand(string Name, string UF): IRequest<ErrorOr<City>>;
+public record CreateCityCommand(string Name, string UF) : IRequest<ErrorOr<City>>;

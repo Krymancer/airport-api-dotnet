@@ -1,0 +1,1 @@
+public record UpdateBaggageRequest(string Identification);

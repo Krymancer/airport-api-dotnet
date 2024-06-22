@@ -4,4 +4,4 @@ using MediatR;
 
 namespace Application.Cities.Queries.GetCityById;
 
-public record GetCityByIdQuery(Guid CityId): IRequest<ErrorOr<City>>;
+public record GetCityByIdQuery(Guid CityId) : IRequest<ErrorOr<City>>;

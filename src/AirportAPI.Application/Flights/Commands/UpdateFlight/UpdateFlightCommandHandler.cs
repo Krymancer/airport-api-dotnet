@@ -1,5 +1,4 @@
 ﻿using Application.Common.Interfaces;
-using Domain.Entities;
 using ErrorOr;
 using MediatR;
 
@@ -24,7 +23,7 @@ public class UpdateFlightCommandHandler : IRequestHandler<UpdateFlightCommand, E
 
         await _flightRepository.UpdateFlightAsync(flight);
         await _unityOfWork.CommitChangesAsync();
-        
-        return Result.Updated; 
+
+        return Result.Updated;
     }
 }

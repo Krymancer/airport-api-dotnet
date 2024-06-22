@@ -5,7 +5,7 @@ using MediatR;
 
 namespace Application.Cities.Queries.GetCityById;
 
-public class GetCityByIdQueryHandler: IRequestHandler<GetCityByIdQuery, ErrorOr<City>>
+public class GetCityByIdQueryHandler : IRequestHandler<GetCityByIdQuery, ErrorOr<City>>
 {
     private readonly ICityRepository _cityRepository;
 

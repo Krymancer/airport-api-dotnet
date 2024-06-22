@@ -28,8 +28,8 @@ public class CreateCityCommandHandler : IRequestHandler<CreateCityCommand, Error
         {
             var errors = validationResult.Errors
                 .ConvertAll(error => Error.Validation(
-                    code: error.PropertyName,
-                    description: error.ErrorMessage));
+                    error.PropertyName,
+                    error.ErrorMessage));
 
             return errors;
         }
